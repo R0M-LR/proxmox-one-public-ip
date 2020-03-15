@@ -13,6 +13,10 @@ Uncomment this line into /etc/sysctl.conf
 ```bash
 net.ipv4.ip_forward = 1
 ```
+To apply   
+```bash
+sysctl -p
+```
 Add this rule info iptables   
 ```bash
 iptables -t nat -A POSTROUTING -s '10.0.0.0/24' -o vmbr0 -j MASQUERADE
