@@ -19,7 +19,7 @@ sysctl -p
 ```
 Add this rule info iptables   
 ```bash
-iptables -t nat -A POSTROUTING -s '192.168.222.0/24' -o vmbr0 -j MASQUERADE
+iptables -t nat -A POSTROUTING -o vmbr0 -j MASQUERADE
 ```
 After, you need to change network card of VMs with vmbr1 and add 192.168.222.254 for gateway.   
 At this state, your VMs have internet connection.    
